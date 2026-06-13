@@ -37,7 +37,7 @@ describe('StatsModal', () => {
   it('calls onClose when × is clicked', () => {
     const onClose = vi.fn()
     render(<StatsModal stats={stats} accuracyPercent={null} open onClose={onClose} onReset={vi.fn()} />)
-    fireEvent.click(screen.getByLabelText('Close'))
+    fireEvent.click(screen.getByLabelText('Close stats (Escape)'))
     expect(onClose).toHaveBeenCalledOnce()
   })
 

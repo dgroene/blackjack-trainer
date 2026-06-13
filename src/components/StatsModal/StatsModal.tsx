@@ -1,5 +1,5 @@
 import { AnimatePresence, motion } from 'framer-motion'
-import { useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import type { Stats } from '../../hooks/useStats'
 import styles from './StatsModal.module.css'
 
@@ -13,6 +13,29 @@ interface StatsModalProps {
 
 export function StatsModal({ stats, accuracyPercent, open, onClose, onReset }: StatsModalProps) {
   const [confirming, setConfirming] = useState(false)
+  const closeBtnRef = useRef<HTMLButtonElement>(null)
+
+  // Wrap onClose so confirm state always resets on dismiss
+  function handleClose() {
+    setConfirming(false)
+    onClose()
+  }
+
+  // Close on Escape key
+  useEffect(() => {
+    if (!open) return
+    function onKey(e: KeyboardEvent) {
+      if (e.key === 'Escape') handleClose()
+    }
+    window.addEventListener('keydown', onKey)
+    return () => window.removeEventListener('keydown', onKey)
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [open])
+
+  // Move focus to close button when modal opens
+  useEffect(() => {
+    if (open) closeBtnRef.current?.focus()
+  }, [open])
 
   function handleReset() {
     onReset()
@@ -28,7 +51,7 @@ export function StatsModal({ stats, accuracyPercent, open, onClose, onReset }: S
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.18 }}
-          onClick={(e) => { if (e.target === e.currentTarget) onClose() }}
+          onClick={(e) => { if (e.target === e.currentTarget) handleClose() }}
         >
           <motion.div
             className={styles.modal}
@@ -37,7 +60,7 @@ export function StatsModal({ stats, accuracyPercent, open, onClose, onReset }: S
             exit={{ scale: 0.9, opacity: 0, y: 20 }}
             transition={{ duration: 0.2, ease: 'easeOut' }}
           >
-            <button className={styles.closeBtn} onClick={onClose} aria-label="Close">×</button>
+            <button ref={closeBtnRef} className={styles.closeBtn} onClick={handleClose} aria-label="Close stats (Escape)">×</button>
             <h2 className={styles.title}>Statistics</h2>
 
             <div className={styles.row}>

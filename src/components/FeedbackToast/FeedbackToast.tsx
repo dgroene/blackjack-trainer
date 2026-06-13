@@ -24,9 +24,10 @@ export function FeedbackToast({ decision, visible }: FeedbackToastProps) {
   return (
     <AnimatePresence mode="wait">
       {visible && (
-        <div className={styles.overlay}>
+        <div className={styles.overlay} aria-live="polite" aria-atomic="true">
           <motion.div
             key={key}
+            role="status"
             className={`${styles.toast} ${isCorrect ? styles.correct : styles.incorrect}`}
             initial={{ opacity: 0, scale: 0.85, y: 20 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
