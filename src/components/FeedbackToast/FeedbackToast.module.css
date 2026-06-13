@@ -10,10 +10,10 @@
 
 .toast {
   pointer-events: auto;
-  border-radius: 12px;
-  padding: 20px 28px;
-  min-width: 280px;
-  max-width: 420px;
+  border-radius: 16px;
+  padding: clamp(16px, 5vw, 32px) clamp(20px, 8vw, 44px);
+  min-width: clamp(260px, 88vw, 560px);
+  max-width: min(560px, 94vw);
   text-align: center;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.6);
   border: 2px solid transparent;
@@ -30,17 +30,17 @@
 }
 
 .icon {
-  font-size: 40px;
+  font-size: clamp(40px, 10vw, 80px);
   line-height: 1;
-  margin-bottom: 8px;
+  margin-bottom: 12px;
 }
 
 .verdict {
   font-family: 'Georgia', serif;
-  font-size: 22px;
+  font-size: clamp(22px, 5.5vw, 44px);
   font-weight: 700;
   letter-spacing: 0.05em;
-  margin-bottom: 6px;
+  margin-bottom: 10px;
 }
 
 .correctVerdict {
@@ -52,24 +52,24 @@
 }
 
 .rule {
-  font-size: 14px;
+  font-size: clamp(14px, 3.5vw, 28px);
   color: rgba(255, 255, 255, 0.75);
   line-height: 1.5;
-  margin-bottom: 14px;
+  margin-bottom: 20px;
 }
 
 .whyBtn {
   background: none;
   border: 1px solid rgba(255, 255, 255, 0.3);
-  border-radius: 4px;
+  border-radius: 6px;
   color: rgba(255, 235, 160, 0.8);
-  font-size: 12px;
+  font-size: clamp(14px, 3vw, 24px);
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  padding: 5px 14px;
+  padding: 8px 22px;
   cursor: pointer;
   transition: border-color 0.15s, color 0.15s;
-  margin-bottom: 6px;
+  margin-bottom: 8px;
 }
 
 .whyBtn:hover {
@@ -78,19 +78,19 @@
 }
 
 .explanation {
-  font-size: 13px;
+  font-size: clamp(14px, 3.25vw, 26px);
   color: rgba(255, 255, 255, 0.85);
   line-height: 1.55;
-  margin-top: 10px;
-  padding-top: 10px;
+  margin-top: 14px;
+  padding-top: 14px;
   border-top: 1px solid rgba(255, 255, 255, 0.15);
   text-align: left;
 }
 
 .continueHint {
-  font-size: 11px;
+  font-size: clamp(12px, 2.75vw, 22px);
   color: rgba(255, 255, 255, 0.35);
-  margin-top: 12px;
+  margin-top: 16px;
   letter-spacing: 0.04em;
   text-transform: uppercase;
 }

@@ -14,8 +14,17 @@ import styles from './GamePage.module.css'
 
 export function GamePage() {
   const { stats, accuracyPercent, recordCorrect, recordIncorrect, resetStats } = useStats()
-  const { play } = useSound()
+  const [muted, setMuted] = useState(() => localStorage.getItem('bj-muted') === '1')
+  const { play } = useSound(!muted)
   const [statsOpen, setStatsOpen] = useState(false)
+
+  function toggleMute() {
+    setMuted(m => {
+      const next = !m
+      localStorage.setItem('bj-muted', next ? '1' : '0')
+      return next
+    })
+  }
   const deckRef = useRef<HTMLDivElement>(null)
   const [dealOrigin, setDealOrigin] = useState<{ x: number; y: number } | undefined>()
 
@@ -66,20 +75,28 @@ export function GamePage() {
           accuracyPercent={accuracyPercent}
           onOpenModal={() => setStatsOpen(true)}
         />
+        <button
+          className={styles.muteBtn}
+          onClick={toggleMute}
+          aria-label={muted ? 'Unmute sounds' : 'Mute sounds'}
+          title={muted ? 'Unmute sounds' : 'Mute sounds'}
+        >
+          {muted ? '🔇' : '🔊'}
+        </button>
       </div>
-
-      {/* Shoe in top-right corner */}
-      <div className={styles.shoeCorner}>
-        <DeckPile ref={deckRef} remaining={state.shoe.cards.length} />
-      </div>
-
-      {/* Strategy chart link in top-left */}
-      <Link to="/chart" className={styles.chartToggle}>
-        Strategy Chart
-      </Link>
 
       {/* Main play area */}
       <div className={styles.playArea}>
+
+        {/* Shoe in top-right corner — positioned inside playArea */}
+        <div className={styles.shoeCorner}>
+          <DeckPile ref={deckRef} remaining={state.shoe.cards.length} />
+        </div>
+
+        {/* Strategy chart link in top-left — positioned inside playArea */}
+        <Link to="/chart" className={styles.chartToggle}>
+          Strategy Chart
+        </Link>
 
         {/* Dealer */}
         <div className={styles.dealerSection}>

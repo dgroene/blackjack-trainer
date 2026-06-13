@@ -6,7 +6,6 @@
   flex-shrink: 0;
 }
 
-/* Stacked shadow cards */
 .pile::before,
 .pile::after {
   content: '';
@@ -63,18 +62,18 @@
 
 .label {
   font-family: 'Georgia', serif;
-  font-size: 10px;
+  font-size: clamp(10px, 2.5vw, 20px);
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: rgba(255, 235, 160, 0.7);
   text-align: center;
-  margin-top: 8px;
+  margin-top: 10px;
 }
 
 .remaining {
   font-family: 'Georgia', serif;
-  font-size: 11px;
+  font-size: clamp(11px, 2.75vw, 22px);
   color: rgba(255, 235, 160, 0.5);
   text-align: center;
-  margin-top: 2px;
+  margin-top: 4px;
 }

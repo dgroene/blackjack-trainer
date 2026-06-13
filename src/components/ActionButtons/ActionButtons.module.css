@@ -1,22 +1,23 @@
 .container {
   display: flex;
-  gap: 12px;
+  gap: 16px;
   justify-content: center;
   flex-wrap: wrap;
 }
 
 .btn {
   font-family: 'Georgia', serif;
-  font-size: 15px;
+  font-size: clamp(16px, 3.75vw, 30px);
   font-weight: 700;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  padding: 12px 28px;
-  border-radius: 6px;
+  padding: clamp(10px, 2vw, 16px) clamp(20px, 5vw, 40px);
+  border-radius: 8px;
   border: 2px solid transparent;
   cursor: pointer;
+  touch-action: manipulation;
   transition: transform 0.1s ease, box-shadow 0.1s ease, opacity 0.15s ease;
-  min-width: 100px;
+  min-width: clamp(80px, 20vw, 140px);
   user-select: none;
 }
 
@@ -36,11 +37,11 @@
   background: #b91c1c;
   color: #fff;
   border-color: #991b1b;
-  box-shadow: 0 3px 0 #7f1d1d;
+  box-shadow: 0 4px 0 #7f1d1d;
 }
 .hit:hover:not(:disabled) {
   background: #dc2626;
-  box-shadow: 0 4px 0 #7f1d1d;
+  box-shadow: 0 5px 0 #7f1d1d;
   transform: translateY(-1px);
 }
 
@@ -48,11 +49,11 @@
   background: #166534;
   color: #fff;
   border-color: #14532d;
-  box-shadow: 0 3px 0 #052e16;
+  box-shadow: 0 4px 0 #052e16;
 }
 .stand:hover:not(:disabled) {
   background: #15803d;
-  box-shadow: 0 4px 0 #052e16;
+  box-shadow: 0 5px 0 #052e16;
   transform: translateY(-1px);
 }
 
@@ -60,11 +61,11 @@
   background: #92400e;
   color: #fef3c7;
   border-color: #78350f;
-  box-shadow: 0 3px 0 #451a03;
+  box-shadow: 0 4px 0 #451a03;
 }
 .double:hover:not(:disabled) {
   background: #b45309;
-  box-shadow: 0 4px 0 #451a03;
+  box-shadow: 0 5px 0 #451a03;
   transform: translateY(-1px);
 }
 
@@ -72,11 +73,11 @@
   background: #1e3a5f;
   color: #bfdbfe;
   border-color: #1e40af;
-  box-shadow: 0 3px 0 #0c1a2e;
+  box-shadow: 0 4px 0 #0c1a2e;
 }
 .split:hover:not(:disabled) {
   background: #1d4ed8;
-  box-shadow: 0 4px 0 #0c1a2e;
+  box-shadow: 0 5px 0 #0c1a2e;
   transform: translateY(-1px);
 }
 
@@ -84,11 +85,11 @@
   background: linear-gradient(135deg, #b8960c 0%, #d4af37 50%, #b8960c 100%);
   color: #1a0e00;
   border-color: #92740a;
-  box-shadow: 0 3px 0 #6b5309;
-  font-size: 16px;
-  padding: 14px 40px;
+  box-shadow: 0 4px 0 #6b5309;
+  font-size: clamp(18px, 4vw, 32px);
+  padding: clamp(12px, 2.5vw, 18px) clamp(28px, 7vw, 56px);
 }
 .newHand:hover:not(:disabled) {
-  box-shadow: 0 5px 0 #6b5309;
+  box-shadow: 0 6px 0 #6b5309;
   transform: translateY(-2px);
 }

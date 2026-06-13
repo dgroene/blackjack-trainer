@@ -12,7 +12,6 @@
   position: relative;
   transform-style: preserve-3d;
   border-radius: 8px;
-  /* shadow lifts the card off the felt */
   filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.55));
 }
 
@@ -34,7 +33,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 4px 5px;
+  padding: 6px 7px;
   box-sizing: border-box;
 }
 
@@ -52,18 +51,18 @@
 
 .rank {
   font-family: 'Georgia', serif;
-  font-size: 18px;
+  font-size: clamp(18px, 4.5vw, 36px);
   font-weight: 700;
   line-height: 1;
 }
 
 .suit {
-  font-size: 13px;
+  font-size: clamp(13px, 3.25vw, 26px);
   line-height: 1;
 }
 
 .suitCenter {
-  font-size: 32px;
+  font-size: clamp(32px, 8vw, 64px);
   text-align: center;
   line-height: 1;
   flex: 1;
@@ -74,7 +73,7 @@
 
 .faceCardLabel {
   font-family: 'Georgia', serif;
-  font-size: 36px;
+  font-size: clamp(36px, 9vw, 72px);
   font-weight: 700;
   text-align: center;
   flex: 1;

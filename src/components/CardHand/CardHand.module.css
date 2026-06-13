@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  gap: 6px;
+  gap: 10px;
   flex-wrap: nowrap;
   min-height: var(--card-h, 112px);
   position: relative;
@@ -16,21 +16,20 @@
   justify-content: center;
 }
 
-/* Tighten overlap when many cards */
 @media (max-width: 600px) {
   .hand {
-    gap: 2px;
+    gap: 4px;
   }
 }
 
 .label {
   font-family: 'Georgia', serif;
-  font-size: 11px;
+  font-size: clamp(11px, 2.75vw, 22px);
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: rgba(255, 235, 160, 0.55);
   position: absolute;
-  top: -20px;
+  top: -28px;
   left: 0;
   width: 100%;
   text-align: center;
@@ -38,11 +37,11 @@
 
 .total {
   font-family: 'Georgia', serif;
-  font-size: 13px;
+  font-size: clamp(13px, 3.25vw, 26px);
   font-weight: 700;
   color: rgba(255, 235, 160, 0.9);
   position: absolute;
-  bottom: -22px;
+  bottom: -30px;
   left: 0;
   width: 100%;
   text-align: center;
