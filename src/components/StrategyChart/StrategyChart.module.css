@@ -1,0 +1,143 @@
+/* ── Outer wrapper ────────────────────────────────────────────────────────── */
+.chart {
+  padding: 0 clamp(8px, 3vw, 24px) 48px;
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+/* ── Legend ──────────────────────────────────────────────────────────────── */
+.legend {
+  display: flex;
+  gap: clamp(8px, 2vw, 16px);
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: clamp(20px, 4vw, 36px);
+}
+
+.legendItem {
+  padding: 6px clamp(10px, 2.5vw, 18px);
+  border-radius: 6px;
+  font-family: 'Georgia', serif;
+  font-size: clamp(12px, 3vw, 16px);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+/* ── Section ─────────────────────────────────────────────────────────────── */
+.section {
+  margin-bottom: clamp(28px, 5vw, 44px);
+}
+
+.sectionTitle {
+  font-family: 'Georgia', serif;
+  font-size: clamp(15px, 4vw, 22px);
+  font-weight: 700;
+  color: #d4af37;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin: 0 0 clamp(8px, 2vw, 14px);
+  text-align: center;
+}
+
+/* ── Table scroll wrapper ─────────────────────────────────────────────────── */
+.tableWrap {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  border-radius: 8px;
+  /* subtle gold border around the whole table */
+  border: 1px solid rgba(212, 175, 55, 0.2);
+}
+
+/* ── Table base ──────────────────────────────────────────────────────────── */
+.table {
+  border-collapse: collapse;
+  width: 100%;
+  min-width: 400px;   /* ensures the grid never squishes below readable size */
+}
+
+/* ── Header cells ────────────────────────────────────────────────────────── */
+.cornerCell {
+  background: rgba(0, 0, 0, 0.5);
+  color: rgba(255, 235, 160, 0.4);
+  font-family: 'Georgia', serif;
+  font-size: clamp(9px, 2vw, 12px);
+  font-weight: 400;
+  padding: clamp(4px, 1vw, 7px) clamp(6px, 1.5vw, 10px);
+  text-align: center;
+  border: 1px solid rgba(255, 215, 0, 0.08);
+  white-space: nowrap;
+}
+
+.colHead {
+  background: rgba(0, 0, 0, 0.45);
+  color: rgba(255, 235, 160, 0.9);
+  font-family: 'Georgia', serif;
+  font-size: clamp(11px, 2.5vw, 15px);
+  font-weight: 700;
+  padding: clamp(4px, 1vw, 7px) clamp(3px, 0.8vw, 5px);
+  text-align: center;
+  border: 1px solid rgba(255, 215, 0, 0.08);
+  min-width: clamp(28px, 6vw, 42px);
+}
+
+.rowHead {
+  background: rgba(0, 0, 0, 0.4);
+  color: rgba(255, 235, 160, 0.9);
+  font-family: 'Georgia', serif;
+  font-size: clamp(11px, 2.5vw, 14px);
+  font-weight: 700;
+  padding: clamp(4px, 1vw, 6px) clamp(8px, 1.5vw, 14px);
+  text-align: right;
+  border: 1px solid rgba(255, 215, 0, 0.08);
+  white-space: nowrap;
+}
+
+/* ── Data cells ──────────────────────────────────────────────────────────── */
+.cell {
+  font-family: 'Georgia', serif;
+  font-size: clamp(11px, 2.5vw, 14px);
+  font-weight: 700;
+  text-align: center;
+  padding: clamp(4px, 1vw, 6px) clamp(3px, 0.8vw, 5px);
+  border: 1px solid rgba(0, 0, 0, 0.25);
+  letter-spacing: 0.03em;
+}
+
+/* ── Action colour variants ──────────────────────────────────────────────── */
+.cellH {
+  background: #b91c1c;
+  color: #fff;
+}
+
+.cellS {
+  background: #166534;
+  color: #fff;
+}
+
+.cellD {
+  background: #b45309;
+  color: #fef3c7;
+}
+
+/* Ds = double-else-stand: slightly darker so experienced players can distinguish */
+.cellDs {
+  background: #78350f;
+  color: #fde68a;
+}
+
+.cellP {
+  background: #1d4ed8;
+  color: #bfdbfe;
+}
+
+/* ── Footnote ────────────────────────────────────────────────────────────── */
+.footnote {
+  font-family: 'Georgia', serif;
+  font-size: clamp(10px, 2.25vw, 13px);
+  color: rgba(255, 235, 160, 0.3);
+  text-align: center;
+  letter-spacing: 0.04em;
+  margin: 0;
+  line-height: 1.6;
+  padding: 0 8px;
+}

@@ -1,0 +1,70 @@
+/* ── Page shell ──────────────────────────────────────────────────────────── */
+.page {
+  min-height: 100dvh;
+  background:
+    radial-gradient(ellipse at 50% 20%, #1a5c2a 0%, #0f3d1a 55%, #071f0d 100%);
+  padding-bottom: 48px;
+}
+
+/* ── Header ──────────────────────────────────────────────────────────────── */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: clamp(14px, 3vw, 24px) clamp(16px, 4vw, 28px);
+  border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+  margin-bottom: clamp(16px, 3vw, 28px);
+}
+
+.backLink {
+  flex: 1;
+  color: rgba(255, 235, 160, 0.6);
+  font-family: 'Georgia', serif;
+  font-size: clamp(13px, 3vw, 18px);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+  transition: color 0.15s;
+  white-space: nowrap;
+}
+
+.backLink:hover {
+  color: #d4af37;
+}
+
+.headerCenter {
+  flex: 2;
+  text-align: center;
+}
+
+.headerSpacer {
+  flex: 1;
+}
+
+.title {
+  font-family: 'Georgia', serif;
+  font-size: clamp(18px, 5vw, 32px);
+  font-weight: 700;
+  color: #d4af37;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin: 0 0 4px;
+}
+
+.subtitle {
+  font-family: 'Georgia', serif;
+  font-size: clamp(10px, 2.25vw, 13px);
+  color: rgba(255, 235, 160, 0.4);
+  letter-spacing: 0.06em;
+  margin: 0;
+}
+
+/* ── Dealer label ────────────────────────────────────────────────────────── */
+.dealerLabel {
+  font-family: 'Georgia', serif;
+  font-size: clamp(11px, 2.5vw, 14px);
+  color: rgba(255, 235, 160, 0.35);
+  letter-spacing: 0.06em;
+  text-align: center;
+  margin: 0 0 clamp(12px, 2vw, 20px);
+  text-transform: uppercase;
+}
