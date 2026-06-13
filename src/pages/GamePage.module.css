@@ -1,0 +1,163 @@
+/* ── Table felt ──────────────────────────────────────────────────────────── */
+.table {
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  background:
+    radial-gradient(ellipse at 50% 40%, #1a5c2a 0%, #0f3d1a 55%, #071f0d 100%);
+  position: relative;
+  overflow: hidden;
+  --card-w: 82px;
+  --card-h: 115px;
+}
+
+/* Felt texture overlay */
+.table::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    repeating-linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0.03) 0px,
+      rgba(0, 0, 0, 0.03) 1px,
+      transparent 1px,
+      transparent 4px
+    );
+  pointer-events: none;
+}
+
+/* Gold trim ring */
+.table::after {
+  content: '';
+  position: absolute;
+  inset: 16px;
+  border: 2px solid rgba(212, 175, 55, 0.2);
+  border-radius: 50% / 12%;
+  pointer-events: none;
+}
+
+/* ── Sections ─────────────────────────────────────────────────────────────── */
+.topBar {
+  position: relative;
+  z-index: 10;
+}
+
+.playArea {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 28px 24px 24px;
+  position: relative;
+  z-index: 1;
+  gap: 20px;
+}
+
+.dealerSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.centerInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.playerSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 28px;
+  width: 100%;
+}
+
+.handsRow {
+  display: flex;
+  gap: 24px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.handWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.activeIndicator {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #fbbf24;
+  box-shadow: 0 0 8px #fbbf24;
+  margin-bottom: 2px;
+}
+
+/* ── Shoe position ───────────────────────────────────────────────────────── */
+.shoeCorner {
+  position: absolute;
+  top: 32px;
+  right: 28px;
+  z-index: 5;
+}
+
+/* ── Chart toggle ────────────────────────────────────────────────────────── */
+.chartToggle {
+  position: absolute;
+  top: 32px;
+  left: 28px;
+  z-index: 5;
+  background: rgba(0, 0, 0, 0.45);
+  border: 1px solid rgba(212, 175, 55, 0.35);
+  border-radius: 6px;
+  color: rgba(255, 235, 160, 0.8);
+  font-family: 'Georgia', serif;
+  font-size: 12px;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  padding: 7px 14px;
+  cursor: pointer;
+  transition: background 0.15s, border-color 0.15s;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.chartToggle:hover {
+  background: rgba(0, 0, 0, 0.65);
+  border-color: rgba(212, 175, 55, 0.65);
+  color: #ffd700;
+}
+
+/* ── Outcome banner ──────────────────────────────────────────────────────── */
+.outcomeBanner {
+  font-family: 'Georgia', serif;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 8px 24px;
+  border-radius: 6px;
+  background: rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(255, 215, 0, 0.25);
+}
+
+.outcomeWin    { color: #4ade80; }
+.outcomeLoss   { color: #f87171; }
+.outcomePush   { color: rgba(255, 235, 160, 0.8); }
+.outcomeBlackjack { color: #ffd700; }
+
+/* ── Idle state ──────────────────────────────────────────────────────────── */
+.idleMessage {
+  font-family: 'Georgia', serif;
+  font-size: 15px;
+  color: rgba(255, 235, 160, 0.45);
+  letter-spacing: 0.06em;
+  text-align: center;
+}
