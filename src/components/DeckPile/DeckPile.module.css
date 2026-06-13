@@ -1,0 +1,80 @@
+.pile {
+  position: relative;
+  width: var(--card-w, 80px);
+  height: var(--card-h, 112px);
+  cursor: default;
+  flex-shrink: 0;
+}
+
+/* Stacked shadow cards */
+.pile::before,
+.pile::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 8px;
+  background: #b50d28;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.pile::before {
+  transform: translate(3px, -3px);
+}
+
+.pile::after {
+  transform: translate(6px, -6px);
+}
+
+.topCard {
+  position: absolute;
+  inset: 0;
+  border-radius: 8px;
+  background: #c8102e;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  z-index: 1;
+  filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.55));
+}
+
+.pattern {
+  width: calc(100% - 10px);
+  height: calc(100% - 10px);
+  border: 2px solid rgba(255, 255, 255, 0.35);
+  border-radius: 4px;
+  background-image:
+    repeating-linear-gradient(
+      45deg,
+      rgba(255, 255, 255, 0.12) 0px,
+      rgba(255, 255, 255, 0.12) 2px,
+      transparent 2px,
+      transparent 8px
+    ),
+    repeating-linear-gradient(
+      -45deg,
+      rgba(255, 255, 255, 0.12) 0px,
+      rgba(255, 255, 255, 0.12) 2px,
+      transparent 2px,
+      transparent 8px
+    );
+}
+
+.label {
+  font-family: 'Georgia', serif;
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(255, 235, 160, 0.7);
+  text-align: center;
+  margin-top: 8px;
+}
+
+.remaining {
+  font-family: 'Georgia', serif;
+  font-size: 11px;
+  color: rgba(255, 235, 160, 0.5);
+  text-align: center;
+  margin-top: 2px;
+}

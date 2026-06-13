@@ -1,0 +1,58 @@
+.hand {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: nowrap;
+  min-height: var(--card-h, 112px);
+  position: relative;
+}
+
+.handDealer {
+  justify-content: center;
+}
+
+.handPlayer {
+  justify-content: center;
+}
+
+/* Tighten overlap when many cards */
+@media (max-width: 600px) {
+  .hand {
+    gap: 2px;
+  }
+}
+
+.label {
+  font-family: 'Georgia', serif;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(255, 235, 160, 0.55);
+  position: absolute;
+  top: -20px;
+  left: 0;
+  width: 100%;
+  text-align: center;
+}
+
+.total {
+  font-family: 'Georgia', serif;
+  font-size: 13px;
+  font-weight: 700;
+  color: rgba(255, 235, 160, 0.9);
+  position: absolute;
+  bottom: -22px;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  letter-spacing: 0.05em;
+}
+
+.totalBust {
+  color: #ff6b6b;
+}
+
+.totalBlackjack {
+  color: #ffd700;
+}
